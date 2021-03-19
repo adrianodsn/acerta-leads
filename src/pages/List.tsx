@@ -35,7 +35,7 @@ export default function List() {
 
   function deleteLead(id: number): boolean {
     // eslint-disable-next-line no-restricted-globals
-    if(confirm('Delete lead?'))
+    if(confirm('Excluir lead?'))
     {
       removeLead(id);
     }
@@ -100,7 +100,7 @@ export default function List() {
       <TableWrapper>
         <table>
           <thead>
-            <tr>
+            <tr className="lg">
               <th></th>
               <th>E-mail</th>
               <th>Nome</th>
@@ -117,13 +117,17 @@ export default function List() {
                     <Link to="/" onClick={() => deleteLead(lead.id)}><FaRegTrashAlt /></Link>
                   </td>
                   <td>
-                  {lead.email}
+                    <b>{lead.email}</b>
+                    <div className="sm">
+                      <div>{lead.nome}</div>
+                      <div>{lead.cpf}</div>
+                    </div>
                   </td>
-                  <td>
-                  {lead.nome}
+                  <td className="lg">
+                    {lead.nome}
                   </td>
-                  <td>
-                  {lead.cpf}
+                  <td className="lg">
+                    {lead.cpf}
                   </td>
                 </tr>
             ))}

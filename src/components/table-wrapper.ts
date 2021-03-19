@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const TableWrapper = styled.div`
+
   tbody, td, tfoot, th, thead, tr {
       border-color: inherit;
       border-style: solid;
@@ -30,6 +31,7 @@ const TableWrapper = styled.div`
 
     td {
       background-color: ${({ theme }) => theme.colors.white};;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};;
       padding: 5px 10px;
     }
 
@@ -52,6 +54,7 @@ const TableWrapper = styled.div`
 
       tr:last-child {
         td {
+          border-bottom: 0;
           padding-bottom: 12px;
 
           &:first-child {
@@ -73,6 +76,18 @@ const TableWrapper = styled.div`
       &:hover {
         color: ${({ theme }) => theme.colors.yellow};;
       }
+    }
+  }
+
+  @media(max-width: 575px) {
+    .lg {
+      display: none;
+    }
+  }
+
+  @media(min-width: 576px) {
+    .sm {
+      display: none;
     }
   }
 `;
